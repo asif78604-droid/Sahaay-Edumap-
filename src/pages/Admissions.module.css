@@ -1,0 +1,191 @@
+/* Admissions Page Module Stylesheet */
+
+/* Hero Banner */
+.heroBanner {
+  height: 50vh;
+  min-height: 350px;
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-dark) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 80px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumb {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--gold);
+  font-weight: 500;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  color: #DDE3ED;
+  text-decoration: none;
+}
+
+/* Page Split Sections */
+.mainAdmissions {
+  background-color: var(--bg-light);
+  padding: var(--section-padding) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 6fr; /* Exact 40% / 60% ratio */
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.introText {
+  font-size: 1.0625rem;
+  line-height: var(--line-height);
+  color: var(--text);
+  margin: 0;
+}
+
+.bulletsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.checkIconCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(212, 160, 23, 0.15);
+  color: var(--gold);
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.bulletBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bulletTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.bulletText {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Horizontal line inside left panel */
+.colSeparator {
+  border: 0;
+  border-top: 1px solid var(--divider);
+  width: 100%;
+}
+
+/* Contact panel block */
+.contactBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  font-size: 0.9375rem;
+}
+
+.bulletIcon {
+  font-size: 1.25rem;
+  color: var(--gold);
+  width: 24px;
+}
+
+.contactRow a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contactRow a:hover {
+  color: var(--gold);
+}
+
+.rightCol {
+  width: 100%;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 40vh;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .mainAdmissions {
+    padding: 4rem 0;
+  }
+
+  .sectionHeading {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,169 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  background: radial-gradient(circle at 70% 30%, var(--navy-mid) 0%, var(--navy-dark) 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px; /* Offset the fixed header */
+  color: #F5F7FA;
+}
+
+.particleContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating particle dynamic base classes loaded in JS/TS */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+  will-change: transform;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.containerWrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.content {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.3em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3.875rem;
+  line-height: 1.1;
+  color: var(--white);
+  margin: 0;
+  font-weight: 700;
+}
+
+.italicHighlight {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Typewriter static & terminal wrap */
+.typewriterRow {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--gold-light);
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2.25rem;
+  background-color: var(--gold);
+  margin-left: 0.25rem;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #DDE3ED;
+  margin: 0;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.heroBtn {
+  min-width: 180px;
+}
+
+/* Responsive constraints */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .typewriterRow {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 120px 0 60px 0;
+  }
+
+  .content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .typewriterRow {
+    font-size: 1.625rem;
+    min-height: 2.75rem;
+    justify-content: center;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .heroBtn {
+    width: 100%;
+  }
+}

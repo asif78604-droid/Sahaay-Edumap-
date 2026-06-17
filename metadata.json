@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Sahaay Edumap",
+  "description": "Professional educational coaching institute offering academic programs, career counseling, and skill development.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

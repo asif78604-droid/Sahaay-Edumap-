@@ -1,0 +1,35 @@
+.btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--hover-shadow);
+  cursor: none;
+  border: none;
+  z-index: 9998; /* Under custom-cursor (99999) but above standard components */
+  outline: none;
+  font-size: 1.125rem;
+}
+
+@media (hover: none) {
+  .btn {
+    cursor: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+}

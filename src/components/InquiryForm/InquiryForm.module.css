@@ -1,0 +1,161 @@
+.container {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: var(--large-border-radius);
+  box-shadow: var(--card-shadow);
+  border-top: 5px solid var(--navy);
+  width: 100%;
+}
+
+.successBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  gap: 1.5rem;
+}
+
+.successIcon {
+  font-size: 3.5rem;
+  color: var(--gold);
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+.successText {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: var(--line-height);
+  max-width: 400px;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--navy-dark);
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem 0;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  background-color: var(--bg-light);
+  border: 1.5px solid var(--divider);
+  border-radius: 8px;
+  padding: 0.875rem 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.1);
+}
+
+.inputError {
+  border-color: #e53e3e !important;
+}
+
+.errorText {
+  color: #e53e3e;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-align: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.submitBtn:hover {
+  background-color: var(--navy-mid);
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Gold Shimmer Sweep pseudo element */
+.submitBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.submitBtn:hover::after {
+  left: 130%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+}

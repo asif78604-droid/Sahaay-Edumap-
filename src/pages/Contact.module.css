@@ -1,0 +1,238 @@
+/* Contact Page Module Stylesheet */
+
+/* Hero Banner */
+.heroBanner {
+  height: 50vh;
+  min-height: 350px;
+  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-dark) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 80px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumb {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--gold);
+  font-weight: 500;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  color: #DDE3ED;
+  text-decoration: none;
+}
+
+/* Three Columns Grid on white */
+.mainContact {
+  background-color: var(--white);
+  padding: var(--section-padding) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal cols: Info, Form, Maps */
+  gap: 3rem;
+  align-items: stretch;
+}
+
+/* Column 1: Contact Details info */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.infoBlockHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.introText {
+  font-size: 0.9375rem;
+  line-height: var(--line-height);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* icon in gold circle */
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(212, 160, 23, 0.12);
+  color: var(--gold);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(212, 160, 23, 0.3);
+}
+
+.detailBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.itemLabel {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.itemValue {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--navy-dark);
+}
+
+.itemValue a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.itemValue a:hover {
+  color: var(--gold);
+}
+
+/* Social media row */
+.socialSection {
+  border-top: 1px solid var(--divider);
+  padding-top: 1.5rem;
+}
+
+.socialLabel {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.socialRow {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: var(--bg-light);
+  border: 1px solid var(--divider);
+  color: var(--navy);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.socialIcon:hover {
+  background-color: var(--gold);
+  color: var(--navy);
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+
+/* Column 2: ContactForm */
+.formCol {
+  width: 100%;
+}
+
+/* Column 3: Google Maps Frame stretching full-height */
+.mapsCol {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  background-color: var(--bg-light);
+  border-radius: var(--large-border-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--divider);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Tablet Overrides */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .infoCol {
+    justify-content: flex-start;
+    gap: 2.5rem;
+  }
+
+  .mapsCol {
+    min-height: 350px;
+  }
+}
+
+/* Mobile Overrides */
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 40vh;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .mainContact {
+    padding: 4rem 0;
+  }
+
+  .sectionHeading {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,255 @@
+.homePage {
+  background-color: var(--bg-light);
+}
+
+/* 1. About Preview Section */
+.aboutSection {
+  background-color: var(--white);
+  padding: var(--section-padding) 0;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.aboutImageCol {
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+  border-radius: var(--large-border-radius);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.imagePlaceholder::after {
+  content: "SAHAAY EDUMAP CAMPUS";
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.1em;
+}
+
+.aboutContentCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.aboutTitle {
+  font-family: var(--font-display);
+  font-size: var(--h2-size);
+  color: var(--navy-dark);
+}
+
+.aboutText {
+  font-size: 1.0625rem;
+  line-height: var(--line-height);
+  color: var(--text);
+  margin: 0;
+}
+
+.aboutTextMuted {
+  font-size: 0.9375rem;
+  line-height: var(--line-height);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* 2. Courses Preview Section */
+.coursesSection {
+  background-color: var(--bg-light);
+  padding: var(--section-padding) 0;
+}
+
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.viewMoreRow {
+  display: flex;
+  justify-content: center;
+}
+
+/* 3. Career Guidance Section */
+.guidanceSection {
+  background-color: var(--navy-dark);
+  color: #F5F7FA;
+  padding: var(--section-padding) 0;
+}
+
+.guidanceHeader {
+  composes: section-header from global;
+}
+
+.guidanceHeader h2 {
+  color: var(--white);
+}
+
+.guidanceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.serviceLabel {
+  background-color: var(--navy-mid);
+  color: var(--gold-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  align-self: flex-start;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Special glass card formatting within list */
+.customGlassCard {
+  background-color: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  transition: background-color var(--transition), border-color var(--transition), transform var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.customGlassCard:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-5px);
+}
+
+.glassIcon {
+  font-size: 2.5rem;
+  color: var(--gold);
+}
+
+.glassTitle {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  color: var(--white);
+  margin: 0;
+}
+
+.glassDesc {
+  font-size: 0.9375rem;
+  line-height: var(--line-height);
+  color: #DDE3ED;
+  margin: 0;
+}
+
+/* 4. Bottom CTA Gold Banner */
+.ctaBanner {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: var(--navy);
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 5px solid var(--white);
+}
+
+.ctaWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--navy-dark);
+  margin: 0;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: var(--line-height);
+  color: var(--navy);
+  margin: 0;
+}
+
+.ctaBtn {
+  background-color: var(--navy) !important;
+  color: var(--white) !important;
+  box-shadow: 0 4px 15px rgba(11, 22, 40, 0.25) !important;
+}
+
+.ctaBtn:hover {
+  background-color: var(--navy-mid) !important;
+  box-shadow: 0 6px 20px rgba(11, 22, 40, 0.4) !important;
+}
+
+/* Responsive break points */
+@media (max-width: 1024px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guidanceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 4rem 0;
+  }
+
+  .imagePlaceholder {
+    height: 300px;
+  }
+
+  .aboutTitle {
+    font-size: 1.75rem;
+  }
+
+  .coursesSection {
+    padding: 4rem 0;
+  }
+
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .guidanceSection {
+    padding: 4rem 0;
+  }
+
+  .guidanceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaTitle {
+    font-size: 1.875rem;
+  }
+}

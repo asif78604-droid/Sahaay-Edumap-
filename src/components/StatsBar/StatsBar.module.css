@@ -1,0 +1,80 @@
+.wrapper {
+  background-color: var(--navy);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid var(--gold);
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.statItem {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+/* Gold dividers between stats */
+.statItem:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1.5px;
+  background-color: var(--gold);
+  opacity: 0.8;
+}
+
+.numberText {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.labelText {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 1024px) {
+  .numberText {
+    font-size: 2.25rem;
+  }
+  
+  .labelText {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2.5rem;
+    column-gap: 1.5rem;
+  }
+
+  .statItem:not(:last-child)::after {
+    display: none; /* Hide vertical dividers on mobile */
+  }
+
+  /* Optional light borders inside the 2x2 grid */
+  .statItem {
+    align-items: center;
+  }
+}

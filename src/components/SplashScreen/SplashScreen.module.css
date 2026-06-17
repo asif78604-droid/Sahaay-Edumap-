@@ -1,0 +1,78 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--navy-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000; /* Over everything */
+  overflow: hidden;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.textContainer {
+  display: flex;
+  font-family: var(--font-display);
+  font-size: 3.5rem; /* Large elegant display size */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .textContainer {
+    font-size: 2.25rem;
+  }
+}
+
+.letter {
+  display: inline-block;
+}
+
+/* Specific letters, highlight or style appropriately */
+.goldLetter {
+  color: var(--gold);
+}
+
+.line {
+  width: 180px;
+  height: 3px;
+  background-color: var(--gold);
+  transform-origin: left;
+}
+
+.progressContainer {
+  position: absolute;
+  bottom: 40px;
+  width: 250px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--gold);
+  width: 0%;
+}
+
+.percentage {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  letter-spacing: 0.1em;
+}

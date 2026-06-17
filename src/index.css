@@ -1,0 +1,268 @@
+/* 
+ * Sahaay Edumap - Global Design System
+ */
+
+:root {
+  --navy: #1A2C5B;
+  --navy-dark: #0B1628;
+  --navy-mid: #132144;
+  --gold: #D4A017;
+  --gold-light: #F0C040;
+  --bg-light: #F5F7FA;
+  --white: #FFFFFF;
+  --text: #2E3A4E;
+  --text-muted: #6B7A8D;
+  --divider: #DDE3ED;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Typography Scales */
+  --h1-size: 3.875rem; /* 62px */
+  --h2-size: 2.625rem; /* 42px */
+  --h3-size: 1.375rem; /* 22px */
+  --body-size: 1rem;   /* 16px */
+  --line-height: 1.8;
+
+  /* Spacing & Borders */
+  --section-padding: 100px;
+  --container-max-width: 1200px;
+  --card-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  --hover-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+  --large-border-radius: 20px;
+  --transition: 0.3s ease;
+}
+
+/* Reset and Global Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none; /* Hide standard cursor for replace-effect */
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Headings Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.25;
+}
+
+/* Reusable Global Classes */
+.container {
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+}
+
+.section-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold);
+  margin: 1rem auto 0 auto;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 2.25rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(212, 160, 23, 0.23);
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 160, 23, 0.35);
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  left: 130%;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.9rem 2.25rem;
+  border-radius: 9999px;
+  border: 2px solid var(--white);
+  cursor: none;
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition), transform var(--transition);
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.btn-shimmer:hover::after {
+  left: 120%;
+}
+
+/* Card classes */
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transform: translateY(0);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  color: #F5F7FA;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-5px);
+}
+
+/* CSS reset helpers (since no utility classes in JSX) */
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: none;
+}
+
+/* Typography Theme Helper Classes */
+.italic-highlight {
+  font-style: italic;
+  font-family: var(--font-display);
+  color: var(--gold);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
